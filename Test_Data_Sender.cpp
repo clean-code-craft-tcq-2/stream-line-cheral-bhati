@@ -10,5 +10,5 @@ int SOC[TotalNoOfReadings];
 TEST_CASE("Check if data is read from the file")
  {
     FILE* fptr = fopen("./SensorData.txt","r");
-    REQUIRE(readDataFromFile(Temperature, SOC, fptr) == true);
+    REQUIRE(readDataFromFile(Temperature, SOC, "./SensorData.txt") == true);
 }
