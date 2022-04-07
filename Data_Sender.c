@@ -1,19 +1,29 @@
-
-bool readDataFromFile(FILE* SensorDataFile, float sensorData[])
+bool readDataFromFile(float *Temperature, int *SOC, char *inputFile)
 {
-    if (SensorDataFile == NULL)
+  float TemperatureData;
+  int SOCData;
+  int FileIndex;
+  
+  FILE *SensorDataFile = fopen(inputFile,"r");
+  if (SensorDataFile != NULL)
+  {
+     for(FileIndex = 0; fscanf(SensorDataFile, "%f %d\n", &TemperatureData, &SOCData)!=EOF; FileIndex++)
     {
-	printf("file cannot be opened \n");
-	return false;
+      Temperature[FileIndex] = TemperatureData;
+      SOC[FileIndex] = SOCData;
     }
-
-    int FileIndex;
-    for (FileIndex = 0; fscanf(SensorDataFile, "%f", &sensorData[i]) != EOF; FileIndex++)
-    {
-    	//do nothing
-    }
-
-    fclose(SensorDataFile);
-    printToConsole(sensorData);
-    return true;
+  fclose(BMSSensorDataFile_fp);
+  return true;
+  }
+  return false;
 }
+
+void SendDataToConsole(float *Temperature, int *SOC)
+{
+  printf("Temperature SOC\n");
+  for(int i = 0; i < TotalNoOfReadings; i++)
+  {
+    printf("%f\t%d\n",Temperature[i],SOC[i]);
+  }
+}
+
