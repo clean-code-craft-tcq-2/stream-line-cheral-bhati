@@ -1,6 +1,6 @@
 #include "Data_Sender.h"
 
-bool readDataFromFile(float *Temperature, int *SOC, char *inputFile)
+void readDataFromFile(float *Temperature, int *SOC, char *inputFile)
 {
   float TemperatureData;
   int SOCData;
@@ -15,9 +15,7 @@ bool readDataFromFile(float *Temperature, int *SOC, char *inputFile)
       SOC[FileIndex] = SOCData;
     }
   fclose(SensorDataFile);
-  return true;
-  }
-  return false;
+   }
 }
 
 void SendDataToConsole(float *Temperature, int *SOC)
