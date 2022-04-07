@@ -14,7 +14,7 @@ bool readDataFromFile(float *Temperature, int *SOC, char *inputFile)
       Temperature[FileIndex] = TemperatureData;
       SOC[FileIndex] = SOCData;
     }
-  fclose(BMSSensorDataFile_fp);
+  fclose(SensorDataFile);
   return true;
   }
   return false;
