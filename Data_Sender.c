@@ -23,7 +23,7 @@ bool readDataFromFile(float *Temperature, int *SOC, char *inputFile)
 void SendDataToConsole(float *Temperature, int *SOC)
 {
   printf("Temperature SOC\n");
-  for(int ReadingIndex = 0; i < TotalNoOfReadings; ReadingIndex++)
+  for(int ReadingIndex = 0; ReadingIndex < TotalNoOfReadings; ReadingIndex++)
   {
     printf("%f\t%d\n",Temperature[ReadingIndex],SOC[ReadingIndex]);
   }
