@@ -1,3 +1,5 @@
+#include "Data_Sender.h"
+
 bool readDataFromFile(float *Temperature, int *SOC, char *inputFile)
 {
   float TemperatureData;
