@@ -29,3 +29,8 @@ void SendDataToConsole(float *Temperature, int *SOC)
   }
 }
 
+void SenderData(float *Temperature, int *SOC, char *inputFile)
+{
+  readDataFromFile(Temperature,SOC,inputFile);
+  SendDataToConsole(Temperature,SOC);
+}
