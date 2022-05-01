@@ -16,4 +16,5 @@ for(int i = 0; i < 3; i++)
     REQUIRE(Temperature[i] == expectedOutput[i][0]);
     REQUIRE(SOC[i] == expectedOutput[i][1]);
    }
+  fclose(fptr);
 }
