@@ -3,7 +3,6 @@
 
 void readDataFromFile(float *Temperature, int *SOC, char *inputFile)
 {
-  printf("Welcome");
   float TemperatureData;
   int SOCData;
   int FileIndex;
@@ -18,8 +17,6 @@ void readDataFromFile(float *Temperature, int *SOC, char *inputFile)
     }
   fclose(SensorDataFile);
    }
-  else
-    printf("error");
 }
 
 void SendDataToConsole(float *Temperature, int *SOC)
