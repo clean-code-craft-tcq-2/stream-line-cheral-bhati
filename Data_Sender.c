@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include "Data_Sender.h"
-printf("Welcome");
+
 void readDataFromFile(float *Temperature, int *SOC, char *inputFile)
 {
+  printf("Welcome");
   float TemperatureData;
   int SOCData;
   int FileIndex;
